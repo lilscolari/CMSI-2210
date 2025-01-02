@@ -1,0 +1,43 @@
+1. What is a computer system?
+A computer system is a set of hardware and software that iteracts with itself and external inputs to process digital logic in order to produce an output.
+2. What are some of the parts of a computer system?
+Some of the parts of a computer system are the circuits, instruction architecture, motherboards, CPUs, executable programs, monitors, and more.
+3. What is the difference between a compiled language and an intepreted language?
+A compiled language is converted directly into machine code so that the machine can execute the instructions while an interpreted language is a language that executes instructions directly without initially compiling it into machine code.
+4. Is C a compiled language?
+C is a compiled language.
+5. Who invented the C language?
+Dennis Ritchie invented the C programming language.
+6. How long has C been in use?
+C first appeared in 1972 according to Ray Toal's notes, but it was developed during 1969-1973.
+7. Is a compiler a translator?
+A compiler translates code into assembly language.
+8. Is an assembler a translator?
+An assembler translates assembly language into machine language.
+9. What is the command to list out the contents of a directory on a mac terminal window?
+The command is 'ls'.
+10. What does the C function atof() do?
+The C function atof() converts the C-string str to a value of type double by interpreting the string as a numerical value according to this article (https://www.geeksforgeeks.org/atol-atoll-and-atof-functions-in-c-c/) on GeeksForGeeks.  
+11. What are the bottom two layers of a computer system? Give a brief desciption of each.
+The two bottom layers of a computer system are Digital logic and Control.  Digital logic is the circuitry and lowest level hardware that all operations run on. Control processes microcode (generally software) using the Digital logic.
+12. What are the three steps of the Von Neumann Architecture?
+The three steps of the Von Neumann Architecture are:
+1. Control Unit fetches an instruction from memory, and saves the location in the program counter.
+2. The instruction is then decoded so that the microcode can understand the instruction. 
+3. The arithmetic logic unit executes the instruction, and the cycle repeats.
+13. What is the purpose of an ALU?
+The ALU or Arithmetic Logic Unit is the part of the processor that performs operations done on integers, including math and bit-wise operations. The data for the ALU may come from the CPU or outisde the CPU. 
+14. What is a register?
+A register is a memory unit used for storing data within a computer's CPU.
+15. What is one difference between Application software and System software?
+One difference between application software and system software is that application software is written for humans while system software is written for computers.
+16. Is the phrase cmp rdi, rsi machine language?
+No, these are examples of assembly language.
+17. How many buses are included in the system bus?
+There are three buses included in the system bus: the data bus, the address bus, and the control bus.
+18. What is the decimal value of 10010111?
+The decimal value of 10010111 is 151.
+19. What is the decimal value of 11111111?
+The decimal value of 11111111 is 255.
+20. What is the largest unsigned integer value that will fit into 16 bits?
+The largest unsigned integer value that will fit into 16 bits is 1111111111111111 or 1+2+4+8+16+32+64+128+256+512+1024+2048+4096+8192+16384+32768=65535

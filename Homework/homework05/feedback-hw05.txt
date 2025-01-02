@@ -1,0 +1,73 @@
+
+
+Evaluation Criteria ~ homework05
+CMSI 2210 Section 01 Fall 2024
+=================================
+
+dec2bin
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   runs  tests    [10 pts.]     10 points earned
+dec2hex
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   32-bit tests   [ 5 pts.]      5 points earned
+   64-bit tests   [ 5 pts.]      5 points earned
+timesTables
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   runs  tests    [10 pts.]      9 points earned
+holdit
+   compiles       [ 5 pts.]      5 points earned
+   runs tests     [15 pts.]     14 points earned
+wordcount
+   compiles       [ 5 pts.]      5 points earned
+   error checks   [ 5 pts.]      5 points earned
+   runs tests     [10 pts.]     10 points earned
+
+ Total possible ~ 100 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 98/100 which is 98.00% which is an A-plus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+Pretty nice work on this assignment!
+
+For timesTables, you should have labeled the rows and columns so that the
+user could tell what is being multiplied, like I showed in class.  For
+example, assuming an input of "5":
+
+  X |  2|  3|  4|  5
+---------------------
+  2 |  4|  6|  8| 10
+  3 |  6|  9| 12| 15
+  4 |  8| 12| 16| 20
+  5 | 10| 15| 20| 25
+
+Also, the larger numbers are out of line, owing to your use of the tab '\t'
+character which will be interpreted differently on different computers and
+on different terminal windows.
+
+On holdit.c it would be best to output an additional prompt to let the user
+know it's time to press 'enter' to start the timer.  This was shown in the
+demonstration in class as well.
+
+Other than that, everything works perfectly!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~  98.84% of  5 points =  4.94 points
+   homework04 ~  93.33% of  5 points =  4.67 points
+   homework05 ~  98.00% of 10 points =  9.80 points
+                                total: 29.41 out of 30.00 = 98.03%
+                                which is an A-plus
+
+Your code looks VERY nice, too.  Interesting approach on dec2bin to start
+with the maximum unsigned value of int....

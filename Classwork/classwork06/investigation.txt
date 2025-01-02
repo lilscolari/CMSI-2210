@@ -1,0 +1,44 @@
+Write a program in our new assembly language to check if the word RACECAR is a palindrome:
+
+        JMP start
+data:   83 65 67 69 68 65 83
+len:    6
+head:   0
+tail:   6
+yes:    90 69 84
+no:     79 80
+lenyes: 3
+lenno:  2
+count:  0
+
+start:  LOAD    data[head]
+        SUB     data[tail]
+        JLZ     label1
+        JGZ     label1
+        LOAD    [head]
+        ADD     1
+        STORE   [head]
+        LOAD    [tail]
+        SUB     1
+        STORE   [tail]
+        SUB     [head]
+        JZ      label2
+        JLZ     label2
+        JMP     start
+
+label1: LOAD    no[count]
+        WRITE   100
+        LOAD    [count]
+        ADD     1
+        SUB     [lenno]
+        JLZ     label1
+        JMP     end
+
+label2: LOAD    yes[count]
+        WRITE   100
+        LOAD    [count]
+        ADD     1
+        SUB     [lenyes]
+        JLZ     label2
+        
+end:    JMP     end

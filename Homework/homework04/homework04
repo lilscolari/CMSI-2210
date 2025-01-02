@@ -1,0 +1,126 @@
+1. Consider the function with three inputs (A,B,C) and two outputs (X,Y) that works like this:
+          A  B  C | X  Y
+         ---------+------
+          0  0  0 | 0  1
+          0  0  1 | 0  1
+          0  1  0 | 0  1
+          0  1  1 | 1  1
+          1  0  0 | 1  0
+          1  0  1 | 1  1
+          1  1  0 | 1  0
+          1  1  1 | 1  1
+
+Design two logic circuits for this function, one using AND, OR and NOT gates only, and one using NAND gates only. You DO NOT HAVE to draw the circuit, but it might be helpful to do that to visualize and trace the logic. However, for this question you are only required to write the four formulas — one for computing X and one for computing Y for each circuit type. They can take the form of a logical equation such as
+  X := A and B or such as Y := not-B and (A or C).
+
+X = A or (B and C)
+X = (A nand A) nand (B nand C)
+Y = (not A) or C
+Y = A nand (C nand C)
+
+2.  Draw a logic circuit that compares two 2-bit signed numbers as follows. It should have four inputs a1, a0, b1, and b0. a1a0 is a 2-bit signed number (call it a) and b1b0 is a 2-bit signed number (call it b). The circuit has one output, c, which is 1 if a > b and 0 otherwise.
+Aristotle's solution: https://github.com/whitches/CMSI-2210/blob/main/Homework/homework04/aristotles_solution.png
+Cameron's solution: https://github.com/whitches/CMSI-2210/blob/main/Homework/homework04/camerons_solution.png
+
+3. Given a 32-bit register, write logic instructions to perform the following operations. For parts (c) and (f) assume an unsigned interpretation; for part (d) assume a signed interpretation.
+  a. Clear all even numbered bits.
+0x9AAAAAAA
+  b. Set the last three bits.
+load: 0x00000000
+0xA0000007
+  c. Compute the remainder when divided by 8.
+0x80000008
+  d. Make the value -1
+Load 1: 0x00000001
+Invert bits: 0xBFFFFFFF
+Add 1: 0x40000001
+  e. Complement the two highest order bits
+0xBC000000
+  f. Compute the largest multiple of 8 less than or equal to the value itself
+Assuming the value is already loaded into the accumulator:
+0x9FFFFFF8
+
+4. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the stanley/penguin language that sends the values 0 through 255 out to port 0x8. NOTE: the machine code for this will be written in the next problem.
+          JMP start    ;
+number:   0            ;
+limit:    255          ;
+start:    LOAD number  ;
+          WRITE 0x8    ;
+          ADD 1        ;
+          STORE number ;
+          SUB limit    ;
+          JLZ start    ;
+end:      JMP end      ;
+
+5. Translate your assembly language program in the previous problem to machine language.
+C0000003
+00000000
+000000FF
+00000001
+30000008
+40000001
+10000001
+50000002
+E0000003
+C0000009
+
+6. For the sample single-accumulator computer discussed in class, write a complete assembly language program in the stanley/penguin language that computes a greatest common divisor. Assume the two inputs are read in from port 0x100. Write the result to port 0x200. You do not need to write machine code for this problem.
+          JMP start    ;
+a:        0            ;
+b:        0            ;
+amodb:    0            ;
+start:    READ 0x100   ;
+          STORE a      ;
+          READ 0x100   ;
+          STORE b      ;
+gcd_loop: LOAD a       ;
+          MOD b        ;
+          STORE amodb  ;
+          LOAD amodb   ;
+          JZ exit      ;
+          LOAD b       ;
+          STORE a      ;
+          LOAD amodb   ;
+          STORE b      ;
+          JMP gcd_loop ;
+exit:     LOAD a       ;
+          WRITE 0x200  ;
+          HLT          ;
+
+7. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the stanley/penguin language, that swaps the accumulator and memory address 0x30AA. You do not need to write machine code for this problem.
+Full code:
+          JMP start    ;
+temp:     0            ;
+initial:  0            ;
+start:    LOAD initial ;
+          STORE temp   ;
+          LOAD 0x30AA  ;
+          STORE initial;
+          LOAD temp    ;
+          STORE 0x30AA ;
+end:      JMP end      ;
+
+Code fragment assuming steps taken before:
+          STORE a      ;
+          LOAD 0x30AA  ;
+          STORE temp   ;
+          LOAD a       ;
+          STORE 0x30AA ;
+          LOAD temp    ;
+
+8. For the sample single-accumulator computer discussed in class, give a code fragment, in assembly language of the stanley/penguin language that has the effect of jumping to the code at address 0x837BBE1 if the value in the accumulator is greater than or equal to 0. You do not need to write machine code for this problem.
+          JMP start    ;
+start:    JGZ jump     ;
+          JZ jump      ;
+jump:     LOAD 0x837BBE1;
+
+9. Part 1 of 2: Explain, at a high-level, what the following sequence of instructions does. In other words, suppose a programmer has stored data in r8 and r9. After executing these instructions, what does the programmer notice about the data?
+      xor r8, r9
+      xor r9, r8
+      xor r8, r9
+This swaps the values in registers r8 and r9 without a temp register.
+
+Part 2 of 2: Also state as briefly as possible why that effect happens.
+The first line makes r9 = r8 xor r9. The second line makes r9 = r9 xor r8, but r8 is r8 xor r9 after line 1; line 2 is functionally r9 = r9 xor (r8 xor r9), equivalent to r9 = r8.
+The third line places r8 xor r9 into r8. Again substituting with initial values gives r8 = (r8 xor r9) xor r8 which simplifies to r9 being stored in r8.
+

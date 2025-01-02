@@ -1,0 +1,59 @@
+
+
+Evaluation Criteria ~ homework04
+CMSI 2210 Section 01 Fall 2024
+=================================
+
+LOGIC DESIGN
+   Logic Question 1a         10 pts.
+   Logic Question 1b          5 pts.
+   Logic Question 2          10 pts.
+
+REGISTER OPERATIONS
+   Register clear even        1 pts.
+   Register set last 3        1 pts.
+   Reg./8 remainder           1 pts.
+   Reg. set to -1             1 pts.
+   Reg. invert 2 MSBs         1 pts.
+   Register computation       1 pts.
+
+STANLEY/PENGUIN ASSEMBLY
+   Q4 - program 1a           11 pts.
+   Q5 - program 1b           11 pts.
+   Q6 - GCD prog.            11 pts.
+   Q7 - swap frag             5 pts.
+   Q8 - jmp to addr           5 pts.
+
+REGISTER INVESTIGATION
+   Q9a - high level expl.     5 pts.
+   Q9b - Why?                 5 pts.
+
+
+Total possible points        90 points
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 84.0/ 90.0 which is 93.33% which is an A
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+problem 3:  I don't think you understood the problem.  The idea is to come
+   up with an operation and a bit mask to accomplish the result.  For (a)
+   that is "AND 0xAAAAAAAA" ~ the "9" in the front of your mask will not
+   accomplish the objective.  Let's talk...  :)
+
+Good job!
+
+========================================================
+SEMESTER SCORE SO FAR:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~  98.84% of  5 points =  4.94 points
+   homework04 ~  93.33% of  5 points =  4.67 points
+                                total: 19.61 out of 20.0 = 98.06%
+                                which is an A-plus
+
+Keep up the good work!

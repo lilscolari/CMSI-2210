@@ -1,0 +1,94 @@
+
+
+Evaluation Criteria ~ homework06
+CMSI 2210 Section all Fall 2023
+=================================
+                                    score
+FINDGCD.NASM                        ------
+   nasm file assembles  [5 pts.]    5 pts.
+   nasm runs            [5 pts.]    5 pts.
+   output correct       [3 pts.]    3 pts.
+GCDFINDER
+   nasm file assembles  [5 pts.]    5 pts.
+   gcdFinder.c compiles [5 pts.]    5 pts.
+   link both files OK   [5 pts.]    5 pts.
+   nasm returns value   [5 pts.]    5 pts.
+   output correct       [3 pts.]    3 pts.
+PARITYGEN
+   nasm file assembles  [5 pts.]    5 pts.
+   nasm runs            [5 pts.]    5 pts.
+   output correct       [3 pts.]    3 pts.
+WHICHENDISUP
+   compiles no errors   [5 pts.]    5 pts.
+   runs no errors       [5 pts.]    5 pts.
+MAKENBOC.C
+   compiles no errors   [5 pts.]    5 pts.
+   uses previous func.  [5 pts.]    5 pts.
+   tester compiles      [5 pts.]    4 pts.
+   tester runs          [5 pts.]    0 pts.
+   output correct       [3 pts.]    3 pts.
+MAKENBO.NASM
+   nasm file assembles  [5 pts.]    5 pts.
+   link all files OK    [5 pts.]    5 pts.
+   calls "C" function   [5 pts.]    5 pts.
+   output correct       [3 pts.]    0 pts.
+
+Total possible points 100
+
+========================================================
+
+TOTAL EARNED POINTS:
+   you earned 91.00/100.00 which is 91% which is an A-minus
+
+========================================================
+SPECIFIC COMMENTS/FEEDBACK:
+
+problem 1 findGCD.nasm
+   perfect!
+
+problem 2 findGCDfunc.nasm & gcdFinder.c
+   perfect, although you could have done a few more tests with some values
+      that aren't quite so obvious...
+
+problem 3 paritygen.nasm
+   code compiles, links, and runs with no errors, but I don't see any output
+      from the program run.  There should be a message telling the user what
+      to do.  Also, I only get a zero on the output.  If I enter a "7" that
+      is correct, but if I enter a "3" I would expect to see a one and I get
+      a zero again.
+
+problem 4 whichEndIsUp.c
+   perfect!
+
+problem 5 makeNBOC.c & makeNBOCtest.c
+   This has a problem.  makeNBOC.c compiles fine, but makeNBOtest.c has an
+      error from the linker due to "multiple definition of `nbocConverter'"
+      because you have done what I told you NOT to do several times in class:
+      you included a "C" source code file.  Thus, you got the "multiple
+      definition" error and your program won't link.  If it won't link, it
+      won't run.
+   I fixed the errors for you since they were trivial, so you can see how to
+      actually do this.  It cost you, but now it links and runs.
+
+problem 6 makeNBOC.c & makeNBON.nasm
+   This one compiles, links, and runs, but goes into an infinite loop.  Too
+      bad on that one...
+
+========================================================
+SEMESTER HOMEWORK TOTALS:
+
+   homework01 ~ 100.00% of  5 points =  5.00 points
+   homework02 ~ 100.00% of  5 points =  5.00 points
+   homework03 ~  98.84% of  5 points =  4.94 points
+   homework04 ~  93.33% of  5 points =  4.67 points
+   homework05 ~  98.00% of 10 points =  9.80 points
+   homework06 ~  91.00% of 15 points = 13.65 points
+                       semester total: 43.06 out of 45.00 = 95.69%
+                             which is an A on the homework
+
+Great work on this difficult assignment!  You were smart to use win32 in the
+programs instead of trying to use win64...
+
+It's been a great pleasure having you in class and I look forward to seeing
+you in future classes.  Good luck on the final!
+
